@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Sayfası</title>
+    <style>
+        /* Genel stil ayarları */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .catalog {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .category {
+            width: 80%;
+            margin: 10px 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-header {
+            padding: 15px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .category-content {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .category-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Mobil uyumluluk */
+        @media (max-width: 768px) {
+            .category {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Katalog</h1>
+    <div class="catalog">
+        <!-- 1. Başlık -->
+        <div class="category">
+            <div class="category-header" onclick="toggleContent(1)">
+                1. Başlık
+            </div>
+            <div class="category-content" id="content-1">
+                <img src="https://i.hizliresim.com/3swul1q.jpg" alt="Başlık 1 Resmi">
+                <p>1. Başlık açıklaması buraya gelecek.</p>
+            </div>
+        </div>
+
+        <!-- 2. Başlık -->
+        <div class="category">
+            <div class="category-header" onclick="toggleContent(2)">
+                2. Başlık
+            </div>
+            <div class="category-content" id="content-2">
+                <img src="https://i.hizliresim.com/j6mtecw.jpg" alt="Başlık 2 Resmi">
+                <p>2. Başlık açıklaması buraya gelecek.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // İçeriği gösterip gizleyecek fonksiyon
+        function toggleContent(id) {
+            var content = document.getElementById("content-" + id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
